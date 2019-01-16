@@ -15,7 +15,8 @@ Features
 
 ## Usage
 
-See <a href="./lulu.example.go">example.go</a>
+See [example.go](lulu/example.go)
+
 
 ### Initial setup
 
