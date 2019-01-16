@@ -1,6 +1,8 @@
 # 💀 Mortis Lux 💡
 
-Health Monitoring in Golang
+Health Monitoring in Golang.
+
+Thread-safe system health server that can be easily added to any project.
 
 
 ## Usage
