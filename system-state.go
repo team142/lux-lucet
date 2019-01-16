@@ -1,5 +1,6 @@
 package molu
 
+//SystemState describes the health of the server along with subsystems
 type SystemState struct {
 	Ok         bool         `json:"ok"`
 	Subsystems []*subsystem `json:"subsystems"`

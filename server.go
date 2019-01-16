@@ -40,7 +40,7 @@ type HealthServer struct {
 	state *SystemState
 }
 
-//Update is a simple method for marking a subsystem as healthy
+//UpdateOk is a simple method for marking a subsystem as healthy
 func (c *HealthServer) UpdateOk(subSystemName string) {
 	c.Update(subSystemName, true, "")
 }
@@ -64,6 +64,7 @@ func (c *HealthServer) Query() SystemState {
 	return i
 }
 
+//Stop tells the go routine reading and modifying state to stop
 func (c *HealthServer) Stop() {
 	c.stop <- true
 }
