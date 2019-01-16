@@ -23,10 +23,7 @@ func main() {
 		log.Fatalln(err)
 	}
 	log.Println(string(b))
-
 }
-
-
 ```
 
 Output:
@@ -77,8 +74,6 @@ func runQueueHandler(healthServer *molu.HealthServer) {
 	}
 
 }
-
-
 ```
 
 Output:
@@ -98,11 +93,6 @@ Output:
       },
       {
          "name":"queue-handler",
-         "ok":true,
-         "msg":""
-      },
-      {
-         "name":"runQueueHandler",
          "ok":false,
          "msg":"some error"
       }
