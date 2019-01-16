@@ -1,5 +1,5 @@
 # 💀 Mortis Lux 💡
-
+<img src="https://goreportcard.com/badge/github.com/team142/mortis-lux" />&nbsp; 
 
 Health Monitoring in Golang.
 

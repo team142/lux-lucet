@@ -8,6 +8,7 @@ import (
 	"github.com/valyala/fasthttp"
 )
 
+//StartRestServer starts a web server that listens on addr and responds with a json body of the server state
 func StartRestServer(addr string, healthServer *HealthServer) {
 	err := fasthttp.ListenAndServe(addr, func(ctx *fasthttp.RequestCtx) {
 		handleRequest(healthServer, ctx)
