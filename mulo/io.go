@@ -1,4 +1,4 @@
-package molu
+package mulo
 
 import (
 	"encoding/json"

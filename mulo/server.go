@@ -1,4 +1,4 @@
-package molu
+package mulo
 
 //StartHealthServer starts a server with its own state that can be updated and queried safely
 func StartHealthServer() *HealthServer {
