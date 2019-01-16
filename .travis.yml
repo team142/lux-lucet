@@ -1,15 +1,13 @@
 language: go
-sudo: false
 go:
   - 1.11.x
-  - tip
-
-before_install:
-  - go mod download
-  - go mod vendor
-
+  - master
+os:
+  - linux
+  - osx
+dist: trusty
+sudo: false
+install: true
 script:
-  - ./go.test.sh
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - env GO111MODULE=on go build
+  - env GO111MODULE=on go test
