@@ -40,7 +40,7 @@ type HealthServer struct {
 	state *SystemState
 }
 
-//Update passes an update a subsystem and the overall health
+//Update is a simple method for marking a subsystem as healthy
 func (c *HealthServer) UpdateOk(subSystemName string) {
 	c.Update(subSystemName, true, "")
 }
