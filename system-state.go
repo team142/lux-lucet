@@ -7,7 +7,7 @@ type SystemState struct {
 
 func (systemState *SystemState) update(s *subsystem) {
 	found, index := findSubSystemIndex(s.Name, systemState.Subsystems)
-	if found == true {
+	if found {
 		systemState.Subsystems[index] = s
 	} else {
 		systemState.Subsystems = append(systemState.Subsystems, s)
@@ -27,13 +27,13 @@ func findSubSystemIndex(name string, subsystems []*subsystem) (found bool, index
 }
 
 func (systemState *SystemState) check() {
-	ok := true
 	for _, s := range systemState.Subsystems {
 		if !s.Ok {
-			ok = false
+			systemState.Ok = false
+			return
 		}
 	}
-	systemState.Ok = ok
+	systemState.Ok = true
 }
 
 type subsystem struct {
