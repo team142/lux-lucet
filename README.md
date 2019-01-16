@@ -15,7 +15,7 @@ Features
 
 ## Usage
 
-See [example.go](lulu/example.go)
+See [example.go](/lulu/example.go)
 
 
 ### Initial setup
