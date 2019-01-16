@@ -15,18 +15,20 @@ Features
 
 ## Usage
 
+See <a href="./lulu.example.go">example.go</a>
+
 ### Initial setup
 
 ```
 import "github.com/team142/lux-lucet/lulu"
-    
-func main() {
+
+...    
 	healthServer := lulu.StartHealthServer()
 
 	healthServer.UpdateOk("net/io")
 	healthServer.UpdateOk("disk/io")
 	healthServer.UpdateOk("queue-handler")
-}
+...
 ```
 
 ### Getting state
