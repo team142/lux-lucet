@@ -1,4 +1,4 @@
-package mulo
+package lulu
 
 //SystemState describes the health of the server along with subsystems
 type SystemState struct {

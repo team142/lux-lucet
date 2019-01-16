@@ -1,7 +1,7 @@
-# 💀 Mortis Lux 💡
-<img src="https://travis-ci.org/team142/mortis-lux.svg?branch=master" />&nbsp;
-<a href="https://goreportcard.com/report/github.com/team142/mortis-lux"><img src="https://goreportcard.com/badge/github.com/team142/mortis-lux" /></a>&nbsp; 
-<a href="https://codeclimate.com/github/team142/mortis-lux/maintainability"><img src="https://api.codeclimate.com/v1/badges/ee3e04d0fac7419ccae9/maintainability" /></a>&nbsp; 
+# 🌟 Lux Lucet 
+<img src="https://travis-ci.org/team142/lux-lucet.svg?branch=master" />&nbsp;
+<a href="https://goreportcard.com/report/github.com/team142/lux-lucet"><img src="https://goreportcard.com/badge/github.com/team142/lux-lucet" /></a>&nbsp; 
+<a href="https://codeclimate.com/github/team142/lux-lucet/maintainability"><img src="https://api.codeclimate.com/v1/badges/ee3e04d0fac7419ccae9/maintainability" /></a>&nbsp; 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat)](http://badges.mit-license.org)
 
 System health server written in Go for systems composed of and dependant on subsystems, requiring concurrently updating health status's. 
@@ -18,10 +18,10 @@ Features
 ### Initial setup
 
 ```
-import "github.com/team142/mortis-lux"
+import "github.com/team142/lux-lucet/lulu"
     
 func main() {
-	healthServer := molu.StartHealthServer()
+	healthServer := lulu.StartHealthServer()
 
 	healthServer.UpdateOk("net/io")
 	healthServer.UpdateOk("disk/io")
@@ -103,5 +103,5 @@ Output:
 This listens on the supplied address and returns the json of the server state on request.
 ```
 ...
-molu.StartRestServer(":9001", healthServer) //Blocking call
+lulu.StartRestServer(":9001", healthServer) //Blocking call
 ```

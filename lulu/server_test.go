@@ -1,4 +1,4 @@
-package mulo
+package lulu
 
 import (
 	"testing"
