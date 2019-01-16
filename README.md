@@ -12,7 +12,7 @@ Features
 - n subsystems
 - Thread-safe updating of state
 - Thread-safe reading of state
-- Can list on address and return state in json
+- Http server - listens on address and return state in json
 
 ## Usage
 
