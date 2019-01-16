@@ -2,7 +2,15 @@ package molu
 
 //StartHealthServer starts a server with its own state that can be updated and queried safely
 func StartHealthServer() *HealthServer {
-	resp := &HealthServer{}
+	resp := &HealthServer{
+		state: &SystemState{
+			Ok: false,
+		},
+		in:    make(chan *subsystem),
+		out:   make(chan SystemState),
+		query: make(chan bool),
+		stop:  make(chan bool),
+	}
 	go func() {
 		run(resp)
 	}()
@@ -10,10 +18,11 @@ func StartHealthServer() *HealthServer {
 }
 
 func run(channel *HealthServer) {
+outer:
 	for {
 		select {
 		case <-channel.stop:
-			break
+			break outer
 		case <-channel.query:
 			channel.out <- *channel.state
 		case item := <-channel.in:
@@ -48,4 +57,8 @@ func (c *HealthServer) Query() SystemState {
 	}()
 	i := <-c.out
 	return i
+}
+
+func (c *HealthServer) Stop() {
+	c.stop <- true
 }
