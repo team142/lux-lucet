@@ -1,4 +1,5 @@
 # 💀 Mortis Lux 💡
+<img src="https://travis-ci.org/team142/mortis-lux.svg?branch=master" />&nbsp;
 <a href="https://goreportcard.com/report/github.com/team142/mortis-lux"><img src="https://goreportcard.com/badge/github.com/team142/mortis-lux" /></a>&nbsp; 
 <a href="https://codeclimate.com/github/team142/mortis-lux/maintainability"><img src="https://api.codeclimate.com/v1/badges/ee3e04d0fac7419ccae9/maintainability" /></a>&nbsp; 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat)](http://badges.mit-license.org)
