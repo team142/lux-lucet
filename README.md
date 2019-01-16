@@ -4,6 +4,12 @@ Health Monitoring in Golang.
 
 Thread-safe system health server that can be easily added to any project.
 
+Features
+- Overall system health
+- n subsystems
+- Thread-safe updating of state
+- Thread-safe reading of state
+- Can list on address and return state in json
 
 ## Usage
 
