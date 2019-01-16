@@ -41,6 +41,11 @@ type HealthServer struct {
 }
 
 //Update passes an update a subsystem and the overall health
+func (c *HealthServer) UpdateOk(subSystemName string) {
+	c.Update(subSystemName, true, "")
+}
+
+//Update passes an update a subsystem and the overall health
 func (c *HealthServer) Update(subSystemName string, ok bool, msg string) {
 	s := &subsystem{
 		Ok:   ok,
