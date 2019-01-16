@@ -3,9 +3,7 @@
 <a href="https://codeclimate.com/github/team142/mortis-lux/maintainability"><img src="https://api.codeclimate.com/v1/badges/ee3e04d0fac7419ccae9/maintainability" /></a>&nbsp; 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat)](http://badges.mit-license.org)
 
-Health Monitoring in Golang.
-
-Thread-safe system health server that can be easily added to any project.
+System health server written in Go for systems composed of and dependant on subsystems, requiring concurrently updating health status's. 
 
 Features
 - Overall system health
