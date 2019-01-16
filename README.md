@@ -24,10 +24,7 @@ func main() {
 
 ```
 state := healthServer.Query()
-b, err := json.Marshal(state)
-if err != nil {
-    log.Fatalln(err)
-}
+b, _ := json.Marshal(state)
 log.Println(string(b))
 ```
 
