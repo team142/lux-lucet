@@ -18,14 +18,17 @@ func main() {
 	healthServer.UpdateOk("net/io")
 	healthServer.UpdateOk("disk/io")
 	healthServer.UpdateOk("queue-handler")
+```
 
-	state := healthServer.Query()
-	b, err := json.Marshal(state)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	log.Println(string(b))
+### Getting state
+
+```
+state := healthServer.Query()
+b, err := json.Marshal(state)
+if err != nil {
+    log.Fatalln(err)
 }
+log.Println(string(b))
 ```
 
 Output:
@@ -56,27 +59,15 @@ Output:
 
 ```
 ...
-	runQueueHandler(healthServer)
-	state = healthServer.Query()
-	b, err = json.Marshal(state)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	log.Println(string(b))
-
+err := someWork()
+if err != nil {
+    healthServer.Update("runQueueHandler", false, err.Error())
+    return
 }
-
-func runQueueHandler(healthServer *molu.HealthServer) {
-
-	//Some work goes wrong here
-	err := someWork()
-	if err != nil {
-		healthServer.Update("runQueueHandler", false, err.Error())
-		return
-	}
-
-}
+...
 ```
+
+
 
 Output:
 ```
