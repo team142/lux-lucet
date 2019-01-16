@@ -9,5 +9,6 @@ dist: trusty
 sudo: false
 install: true
 script:
+  - cd mulo
   - env GO111MODULE=on go build
   - env GO111MODULE=on go test
