@@ -6,21 +6,24 @@ type SystemState struct {
 }
 
 func (systemState *SystemState) update(s *subsystem) {
-	found := false
-	var index int
-	for i, item := range systemState.Subsystems {
-		if item.Name == s.Name {
-			found = true
-			index = i
-			break
-		}
-	}
+	found, index := findSubSystemIndex(s.Name, systemState.Subsystems)
 	if found == true {
 		systemState.Subsystems[index] = s
 	} else {
 		systemState.Subsystems = append(systemState.Subsystems, s)
 	}
 	systemState.check()
+}
+
+func findSubSystemIndex(name string, subsystems []*subsystem) (found bool, index int) {
+	var item *subsystem
+	for index, item = range subsystems {
+		if item.Name == name {
+			found = true
+			break
+		}
+	}
+	return
 }
 
 func (systemState *SystemState) check() {
