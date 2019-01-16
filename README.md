@@ -90,3 +90,10 @@ Output:
    ]
 }
 ```
+
+### Starting the web server
+This listens on the supplied address and returns the json of the server state on request.
+```
+...
+molu.StartRestServer(":9001", healthServer) //Blocking call
+```
