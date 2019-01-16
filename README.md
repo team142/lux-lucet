@@ -1,7 +1,7 @@
 # 💀 Mortis Lux 💡
 <a href="https://goreportcard.com/github.com/team142/mortis-lux"><img src="https://goreportcard.com/badge/github.com/team142/mortis-lux" /></a>&nbsp; 
 <a href="https://codeclimate.com/github/team142/mortis-lux/maintainability"><img src="https://api.codeclimate.com/v1/badges/ee3e04d0fac7419ccae9/maintainability" /></a>&nbsp; 
-<a href="https://codeclimate.com/github/team142/mortis-lux/test_coverage"><img src="https://api.codeclimate.com/v1/badges/ee3e04d0fac7419ccae9/test_coverage" /></a>&nbsp;
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat)](http://badges.mit-license.org)
 
 Health Monitoring in Golang.
 
