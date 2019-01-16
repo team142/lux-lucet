@@ -18,6 +18,7 @@ func main() {
 	healthServer.UpdateOk("net/io")
 	healthServer.UpdateOk("disk/io")
 	healthServer.UpdateOk("queue-handler")
+}
 ```
 
 ### Getting state
