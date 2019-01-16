@@ -1,4 +1,4 @@
-package mortis_lux
+package molu
 
 type SystemState struct {
 	Ok         bool         `json:"ok"`
