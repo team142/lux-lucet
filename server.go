@@ -22,6 +22,7 @@ func run(channel *HealthServer) {
 	}
 }
 
+//HealthServer holds state for a server and exposes an interface for retrieving and modifying state
 type HealthServer struct {
 	in    chan *subsystem
 	out   chan SystemState
