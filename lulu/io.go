@@ -22,14 +22,20 @@ func handleRequest(healthServer *HealthServer, ctx *fasthttp.RequestCtx) {
 	b, err := json.Marshal(health)
 	if err != nil {
 		log.Println(err.Error())
-		fmt.Fprintf(ctx, "Internal server error!\n\n")
-		ctx.SetContentType("text/plain; charset=utf8")
-		ctx.Response.SetStatusCode(500)
+		respondToReq(ctx, 500, "text/plain; charset=utf8", "Internal server error!\n\n")
 		return
 	}
-	fmt.Fprint(ctx, string(b))
-	ctx.SetContentType("application/json; charset=utf8")
-	ctx.Response.SetStatusCode(200)
+	respondToReq(ctx, 200, "application/json; charset=utf8", string(b))
 	return
+
+}
+
+func respondToReq(ctx *fasthttp.RequestCtx, code int, contentType, body string) {
+	ctx.Response.SetStatusCode(code)
+	ctx.SetContentType(contentType)
+	_, err := fmt.Fprintf(ctx, body)
+	if err != nil {
+		log.Println(err.Error())
+	}
 
 }
