@@ -17,17 +17,17 @@ func StartRestServer(addr string, healthServer *HealthServer) {
 		log.Fatalf("Error in ListenAndServe: %s", err)
 	}
 }
+
 func handleRequest(healthServer *HealthServer, ctx *fasthttp.RequestCtx) {
 	health := healthServer.Query()
 	b, err := json.Marshal(health)
 	if err != nil {
 		log.Println(err.Error())
-		respondToReq(ctx, 500, "text/plain; charset=utf8", "Internal server error!\n\n")
+		respondToReq(ctx, fasthttp.StatusInternalServerError, "text/plain; charset=utf8", "Internal server error!\n\n")
 		return
 	}
-	respondToReq(ctx, 200, "application/json; charset=utf8", string(b))
+	respondToReq(ctx, fasthttp.StatusOK, "application/json; charset=utf8", string(b))
 	return
-
 }
 
 func respondToReq(ctx *fasthttp.RequestCtx, code int, contentType, body string) {
@@ -37,5 +37,4 @@ func respondToReq(ctx *fasthttp.RequestCtx, code int, contentType, body string) 
 	if err != nil {
 		log.Println(err.Error())
 	}
-
 }
