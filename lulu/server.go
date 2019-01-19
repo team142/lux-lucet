@@ -11,9 +11,7 @@ func StartHealthServer() *HealthServer {
 		query: make(chan bool),
 		stop:  make(chan bool),
 	}
-	go func() {
-		run(resp)
-	}()
+	go run(resp)
 	return resp
 }
 
