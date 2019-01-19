@@ -16,17 +16,6 @@ func (systemState *SystemState) update(s *subsystem) {
 	systemState.check()
 }
 
-func findSubSystemIndex(name string, subsystems []*subsystem) (found bool, index int) {
-	var item *subsystem
-	for index, item = range subsystems {
-		if item.Name == name {
-			found = true
-			break
-		}
-	}
-	return
-}
-
 func (systemState *SystemState) check() {
 	for _, s := range systemState.Subsystems {
 		if !s.Ok {
@@ -41,4 +30,15 @@ type subsystem struct {
 	Name string `json:"name"`
 	Ok   bool   `json:"ok"`
 	Msg  string `json:"msg"`
+}
+
+func findSubSystemIndex(name string, subsystems []*subsystem) (found bool, index int) {
+	var item *subsystem
+	for index, item = range subsystems {
+		if item.Name == name {
+			found = true
+			break
+		}
+	}
+	return
 }
