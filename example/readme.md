@@ -16,7 +16,7 @@ import "github.com/team142/lux-lucet/lulu"
 
 ### Getting state
 
-```
+```go
 state := healthServer.Query()
 b, _ := json.Marshal(state)
 log.Println(string(b))
