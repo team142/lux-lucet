@@ -23,7 +23,7 @@ log.Println(string(b))
 ```
 
 Output:
-```
+```go
 {
    "ok":true,
    "subsystems":[
@@ -48,7 +48,7 @@ Output:
 
 ### Updating bad health
 
-```
+```go
 ...
 err := someWork()
 if err != nil {
@@ -61,7 +61,7 @@ if err != nil {
 
 
 Output:
-```
+```go
 {
    "ok":false,
    "subsystems":[
@@ -86,7 +86,7 @@ Output:
 
 ### Starting the web server
 This listens on the supplied address and returns the json of the server state on request.
-```
+```go
 ...
 lulu.StartRestServer(":9001", healthServer) //Blocking call
 ```
