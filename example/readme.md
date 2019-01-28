@@ -2,7 +2,7 @@
 
 ### Initial setup
 
-```
+```go
 import "github.com/team142/lux-lucet/lulu"
 
 ...    
