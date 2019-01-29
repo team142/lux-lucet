@@ -14,7 +14,7 @@ import "github.com/team142/lux-lucet/lulu"
 ...
 ```
 
-### Getting state
+### Check health
 
 ```go
 state := healthServer.Query()
